@@ -1,0 +1,66 @@
+{% extends 'WebApp/base.html' %}
+{% load static %}
+
+{% block title %}
+    Profesores
+{% endblock title %}
+{% block content %}
+<h2 class="text-center mt-2">Buscar Profesor</h2>
+<div class="d-flex flex-column align-items-center mb-2">
+    <form action="" method="GET">
+        <input type="text" name="q" placeholder="Buscar..." required>
+        <button type="submit">Buscar</button>
+    </form>
+</div>
+
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-4">
+            
+            <form action="" method="POST">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                  <label class="form-label">Nombre</label>
+                  <input name="nombre" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Apellido</label>
+                  <input name="apellido" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input name="mail" type="email" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Profesion</label>
+                    <input name="profesion" type="text" class="form-control">
+                </div>
+          
+          
+                <button type="submit" class="btn btn-primary">Añadir Docente</button>
+          
+          </form>
+
+        </div>
+    </div>
+</div>
+<!-- Content section 1-->
+<section id="scroll">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="{% static 'webApp/assets/img/01.jpg' %}" alt="..." /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2 class="display-4">For those Profesores about to rock...</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock  %}
+    
